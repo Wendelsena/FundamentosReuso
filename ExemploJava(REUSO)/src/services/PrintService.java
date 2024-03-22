@@ -3,16 +3,17 @@ package services;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PrintService {
+// tipo T = qualquer (cria um parametro para classe).
+public class PrintService<T> {
 	
 	// lista de números inteiros.
-	private List<Integer> list = new ArrayList<>();
+	private List<T> list = new ArrayList<>();
 	
-	public void addValue(Integer value) { // adiciona um valor a lista.
+	public void addValue(T value) { // adiciona um valor a lista.
 		list.add(value);
 	}
 	
-	public Integer first() { // devolve o primero objeto dentro da lista.
+	public T first() { // devolve o primero objeto dentro da lista.
 		if (list.isEmpty()) {
 			throw new IllegalStateException("List is empty!"); // caso a lista esteja vazia.
 		}

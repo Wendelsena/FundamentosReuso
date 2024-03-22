@@ -3,7 +3,6 @@ package application;
 import java.util.Scanner;
 
 import services.PrintService;
-import services.PrintServiceString;
 
 public class Program {
 
@@ -11,8 +10,9 @@ public class Program {
 
 		Scanner sc = new Scanner(System.in);
 
-		PrintService ps = new PrintService();
-		PrintServiceString pss = new PrintServiceString();
+		// o parametro T me permite dar um tipo de objeto.
+		PrintService<Integer> psi = new PrintService<>();
+		PrintService<String> pss = new PrintService<>();
 
 		char x;
 
@@ -40,11 +40,11 @@ public class Program {
 			for (int i = 0; i < n; i++) {
 				System.out.print(": ");
 				int value = sc.nextInt();
-				ps.addValue(value);
+				psi.addValue(value);
 			}
 
-			ps.print();
-			System.out.println("First: " + ps.first());
+			psi.print();
+			System.out.println("First: " + psi.first());
 		} else {
 			System.out.println("Enter s or i!");
 		}
